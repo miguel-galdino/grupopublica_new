@@ -50,7 +50,8 @@ h1, h2, h3 {
 }
 
 .main-header .logo img {
-  height: 50px;
+  height: 70px;
+  background-position-x: center;
 }
 
 .main-navigation {
@@ -79,7 +80,7 @@ h1, h2, h3 {
 }
 
 .main-header .cta-button {
-  background-color: #ff7b00;
+  background-color: #061492;
   color: white;
   padding: 10px 20px;
   text-decoration: none;
@@ -146,7 +147,7 @@ h1, h2, h3 {
   text-align: center;
   cursor: pointer;
   overflow: hidden; /* Muito importante */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
   padding: 0; /* SEGREDO: Sem padding aqui! */
 }
 
@@ -155,7 +156,7 @@ h1, h2, h3 {
   display: block;
   font-size: 1.1rem;
   font-weight: bold;
-  background-color: #ff7b00;
+  background-color: #061492;
   color: white; 
   
   /* Estado inicial (escondido) */
@@ -175,7 +176,7 @@ h1, h2, h3 {
 
 .topic-item i {
   font-size: 3rem; 
-  color: #ff7b00; 
+  color: #061492; 
   margin-bottom: 15px;
 }
 
@@ -297,4 +298,315 @@ h1, h2, h3 {
   .topics-section .section-title {
     font-size: 2rem;
   }
+
+}
+/* ---
+   1. CONFIGURAÇÃO GLOBAL E VARIÁVEIS
+   --- */
+:root {
+    --dark-navy: #99b0fd;
+    --light-navy: #112240;
+    --lightest-navy: #233554;
+    --slate: #8892b0;
+    --light-slate: #a8b2d1;
+    --lightest-slate: #ccd6f6;
+    --white: #e6f1ff;
+    --green: #061492;
+    --font-sans: 'Poppins', sans-serif;
+    --nav-height: 80px;
+}
+
+/* Reset básico e configuração do box-model */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Rolagem suave ao clicar em links âncora */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--white);
+    color: var(--slate);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+h1, h2, h3 {
+    color: var(--dark-navy);
+    font-weight: 600;
+}
+
+/* ---
+   2. CABEÇALHO E NAVEGAÇÃO
+   --- */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo img {
+    height: 40px; /* Ajuste conforme o tamanho do seu logo */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-navy);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--green);
+}
+
+.cta-button {
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--green);
+    color: var(--green);
+    background-color: transparent;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--white);
+    color: var(--dark-navy);
+    box-shadow: 0 4px 15px rgba(76, 106, 236, 0.4);
+}
+
+
+/* ---
+   3. SEÇÃO HERO (BANNER)
+   --- */
+.hero-section {
+    background-color: #F8F9FA;
+    padding: calc(var(--nav-height) + 4rem) 0 4rem 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.hero-subtitle {
+    color: var(--green);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1.5rem;
+}
+
+.hero-description {
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    font-size: 1.1rem;
+}
+
+.cta-button-main {
+    padding: 0.8rem 2rem;
+    background-color: var(--green);
+    color: var(--dark-navy);
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cta-button-main:hover {
+    background-color: var(--white);
+    color: var(--dark-navy);
+    box-shadow: 0 4px 15px rgba(76, 106, 236, 0.4);
+}
+
+
+/* ---
+   4. SEÇÃO DE SOLUÇÕES (SERVICES)
+   --- */
+.services-section {
+    padding: 6rem 0;
+    background-color: var(--white);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.services-intro p {
+    margin-bottom: 2rem;
+}
+
+.learn-more-button {
+    /* Estilo similar ao CTA principal */
+    padding: 0.7rem 1.8rem;
+    background-color: var(--green);
+    color: var(--dark-navy);
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.learn-more-button:hover {
+    background-color: var(--white);
+    color: var(--dark-navy);
+    box-shadow: 0 4px 15px rgba(76, 106, 236, 0.4);
+}
+
+.service-item {
+    display: block;
+    padding: 1.5rem 0;
+    text-decoration: none;
+    color: var(--dark-navy);
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s ease;
+}
+
+.service-item h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+.service-item span {
+    color: var(--green);
+    font-size: 1.5rem;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.service-item:hover span {
+    transform: translateX(10px);
+}
+
+
+/* ---
+   5. SEÇÃO DE MARCAS/CLIENTES
+   --- */
+.brands-section {
+    padding: 4rem 0;
+    background-color: var(--dark-navy);
+    text-align: center;
+}
+
+.brands-title {
+    color: var(--lightest-slate);
+    font-weight: 500;
+    margin-bottom: 3rem;
+}
+
+.brands-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.brands-grid img {
+    height: 40px; /* Ajuste a altura dos logos */
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.brands-grid img:hover {
+    opacity: 1;
+}
+
+/* ---
+   6. RODAPÉ
+   --- */
+.main-footer {
+    padding: 4rem 0 2rem 0;
+    background-color: #F8F9FA;
+    font-size: 0.9rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-column h4 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--dark-navy);
+}
+
+.footer-column a, .footer-column p {
+    display: block;
+    color: var(--slate);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+}
+
+.footer-column a:hover {
+    color: var(--green);
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 2rem;
+}
+
+
+/* ---
+   7. RESPONSIVIDADE (MOBILE-FIRST)
+   --- */
+@media (max-width: 768px) {
+    .nav-links, .cta-button {
+        display: none; /* Em um projeto real, aqui entraria o JS para um menu hamburger */
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        text-align: center;
+    }
 }
